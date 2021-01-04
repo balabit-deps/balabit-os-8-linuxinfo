@@ -1,3 +1,9 @@
+linuxinfo (3.1.2-1bb1) focal; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Mon, 04 Jan 2021 16:30:04 +0100
+
 linuxinfo (3.1.2-1) unstable; urgency=medium
 
   * New upstream release.
