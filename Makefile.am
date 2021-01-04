@@ -13,8 +13,7 @@ PCRE_LINK         = @pcre_lib@
 
 ACLOCAL_AMFLAGS   = -I m4
 AM_CPPFLAGS       = -DLOCALEDIR=\"$(localedir)\"
-linuxinfo_LDADD = $(LIBINTL)
-linuxinfo_LDFLAGS = $(PCRE_LINK)
+linuxinfo_LDADD = $(LIBINTL) $(PCRE_LINK)
 
 dist-hook:
 	rm $(distdir)/po/stamp-po

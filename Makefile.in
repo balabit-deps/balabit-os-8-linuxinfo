@@ -118,9 +118,7 @@ am_linuxinfo_OBJECTS = linuxinfo.$(OBJEXT) linuxinfo_common.$(OBJEXT) \
 	linuxinfo_unknown.$(OBJEXT)
 linuxinfo_OBJECTS = $(am_linuxinfo_OBJECTS)
 am__DEPENDENCIES_1 =
-linuxinfo_DEPENDENCIES = $(am__DEPENDENCIES_1)
-linuxinfo_LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(linuxinfo_LDFLAGS) \
-	$(LDFLAGS) -o $@
+linuxinfo_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -412,8 +410,7 @@ SUBDIRS = po po4a
 PCRE_LINK = @pcre_lib@
 ACLOCAL_AMFLAGS = -I m4
 AM_CPPFLAGS = -DLOCALEDIR=\"$(localedir)\"
-linuxinfo_LDADD = $(LIBINTL)
-linuxinfo_LDFLAGS = $(PCRE_LINK)
+linuxinfo_LDADD = $(LIBINTL) $(PCRE_LINK)
 all: all-recursive
 
 .SUFFIXES:
@@ -496,7 +493,7 @@ clean-binPROGRAMS:
 
 linuxinfo$(EXEEXT): $(linuxinfo_OBJECTS) $(linuxinfo_DEPENDENCIES) $(EXTRA_linuxinfo_DEPENDENCIES) 
 	@rm -f linuxinfo$(EXEEXT)
-	$(AM_V_CCLD)$(linuxinfo_LINK) $(linuxinfo_OBJECTS) $(linuxinfo_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(LINK) $(linuxinfo_OBJECTS) $(linuxinfo_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
